@@ -48,8 +48,14 @@ Untuk mendeploy lebih dari satu instance Zookeeper menggunakan Docker Compose, A
    - Ubah `container_name` menjadi unik, misalnya `zookeeper2`.
    - Sesuaikan `ZOOKEEPER_SERVER_ID` menjadi `2`.
    - Ubah port mapping menjadi port yang belum digunakan, misalnya `12182:2181`.
+   - Lebih lengkapnya bisa dilihat pada file `docker-compose.double.yaml`
 
-3. **Jalankan Docker Compose**:
+3. Hubungkan dengan Zookeeper lain.
+
+   - Isi `ZOOKEPER_SERVERS` seperti pada file `docker-compose.double.yaml`
+   - Pastikan VM membuka port 2888 dan 3888.
+
+4. **Jalankan Docker Compose**:
    - Gunakan perintah `docker-compose up -d` untuk menjalankan semua instance Zookeeper yang telah dikonfigurasi.
 
 Pastikan untuk mengupdate firewall dan konfigurasi jaringan VM sesuai dengan port yang digunakan oleh setiap replica Zookeeper. Ini memastikan bahwa setiap instance dapat berkomunikasi dengan benar baik di dalam cluster maupun dengan aplikasi eksternal yang membutuhkannya.
