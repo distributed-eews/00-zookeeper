@@ -41,7 +41,7 @@ Zookeeper adalah layanan terdistribusi yang digunakan untuk menyimpan konfiguras
 
 Untuk mendeploy lebih dari satu instance Zookeeper menggunakan Docker Compose, Anda perlu menyesuaikan konfigurasi `docker-compose.yaml` dengan menambahkan lebih banyak service yang masing-masing memiliki `ZOOKEEPER_SERVER_ID` unik dan port yang sesuai. Berikut adalah langkah-langkahnya:
 
-1. **Salin dan Sesuaikan Konfigurasi**: Duplikasi bagian service `zookeeper1` dalam file `docker-compose.yaml`. Untuk setiap replica baru, ubah nilai `ZOOKEPER_SERVER_ID` dan sesuaikan port mapping-nya untuk menghindari konflik. Tambahkan konfigurasi `ZOOKEPER_SERVERS`.
+1. **Salin dan Sesuaikan Konfigurasi**: Duplikasi bagian service `zookeeper1` dalam file `docker-compose.yaml`. Untuk setiap replica baru, ubah nilai `ZOOKEEPER_SERVER_ID` dan sesuaikan port mapping-nya untuk menghindari konflik. Tambahkan konfigurasi `ZOOKEEPER_SERVERS`.
 
 2. **Contoh Konfigurasi untuk Replica Kedua**:
 
@@ -52,7 +52,7 @@ Untuk mendeploy lebih dari satu instance Zookeeper menggunakan Docker Compose, A
 
 3. Hubungkan dengan Zookeeper lain.
 
-   - Isi `ZOOKEPER_SERVERS` seperti pada file `docker-compose.double.yaml`
+   - Isi `ZOOKEEPER_SERVERS` seperti pada file `docker-compose.double.yaml`
    - Pastikan VM membuka port 2888 dan 3888.
 
 4. **Jalankan Docker Compose**:

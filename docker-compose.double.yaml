@@ -6,7 +6,7 @@ services:
     container_name: zookeeper1
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEPER_SERVER_ID: 1
+      ZOOKEEPER_SERVER_ID: 1
       ZOOKEEPER_TICK_TIME: 2000
       ZOOKEPER_SERVERS: zookeeper1:2888:3888;zookeeper2:2888:3888
     ports:
@@ -19,7 +19,7 @@ services:
     container_name: zookeeper2
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEPER_SERVER_ID: 2
+      ZOOKEEPER_SERVER_ID: 2
       ZOOKEEPER_TICK_TIME: 2000
       ZOOKEPER_SERVERS: zookeeper1:2888:3888;zookeeper2:2888:3888
     ports:
